@@ -1,6 +1,7 @@
 from aiogram.types import ReplyKeyboardMarkup
 from aiogram.types import KeyboardButton
 from userstates import UserStates
+from aiogram import F
 
 def get_keyboard(buttons):
     kb = []
