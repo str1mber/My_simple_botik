@@ -1,5 +1,5 @@
 def add_pari(user_id, pari):
-    message = "Добавление пари \"" + pari + "\" для пользователя =" + str(user_id)
+    message = "Добавление пари \"" + pari + "\" для пользователя = " + str(user_id)
     return message
 
 

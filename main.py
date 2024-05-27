@@ -19,7 +19,7 @@ dp = Dispatcher()
 @dp.message(Command("start"))
 async def send_welcome(message: types.Message, state: FSMContext):
     kb = keyboards[UserStates.BASE]
-    await message.answer("Привет! Я эхо-лот, ха-ха-ха", reply_markup=kb)
+    await message.answer("Привет! Это СТАВКИ НА СПОРТ!!! 1X-BET", reply_markup=kb)
     await state.set_state(UserStates.BASE)
 
 @dp.message(F.text == "Мои пари", StateFilter(UserStates.BASE))
@@ -27,7 +27,7 @@ async def my_paris(message: types.Message):
     text = "Список пари:"
     paris = ps.get_paris(message.from_user.id)
     for pari in paris:
-        text += "\n" + pari
+        text += "\n" + '- ' + pari
     await message.answer(text)
 
 @dp.message(F.text == "Создать пари", StateFilter(UserStates.BASE))
