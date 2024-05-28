@@ -13,7 +13,7 @@ class Pari:
 
     def __str__(self) -> str:
         return f"""
-        - **Название пари**: {self.name}
-        - **Кто заключил**: {self.challenger_name}
-        - **Выполняющий**: {self.taker_name}
+        - Название пари: {self.name}
+        - Кто заключил: {self.challenger_name}
+        - Выполняющий: {self.taker_name}
         """
