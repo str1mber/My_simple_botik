@@ -23,12 +23,12 @@ async def send_welcome(message: types.Message, state: FSMContext):
     print(message.from_user.username)
     print(message.chat.id)
     kb = keyboards[UserStates.BASE]
-    await message.answer("Привет! Это СТАВКИ НА СПОРТ!!! 1X-BET", reply_markup=kb)
+    await message.answer("**Привет! Это СТАВКИ НА СПОРТ!!! 1X-BET**", reply_markup=kb)
     await state.set_state(UserStates.BASE)
 
 @dp.message(F.text == "Мои пари", StateFilter(UserStates.BASE))
 async def my_paris(message: types.Message):
-    text = "Список пари:"
+    text = "**Список пари:**"
     paris = ps.get_paris(message.from_user.id)
     for pari in paris:
         text += "\n" + '- ' + pari
